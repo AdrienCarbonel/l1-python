@@ -41,35 +41,38 @@ def afficheTemps(temps):
     else:
         print(temps[3],"Seconde","",end="")
     return("")
-print(afficheTemps(temps))
 
-
-def demandeTemps(t):
+j = int(input("Entrez un nombre de jours :"))
+h = int(input("Entrez un nombre d'heures :"))
+m = int(input("Entrez un nombre de minutes :"))
+s = int(input("Entrez un nombre de secondes :"))
+def demandeTemps(j,h,m,s):
     """Cette fonction permet de demander à l'utilisateur un temps et elle permet d'afficher si le temps entré par l'utilisateur ets le même que afficheTemps()
 
     Args:
         t ----> string : Temps entré par l'utilisateur
     """
-    t = input("Entrez un temps :")
-    while t != afficheTemps(temps):
-        t = input("Entrez un nouveau temps  :")
-        if temps[0] > 365:
+    t = (j,h,m,s)
+    while t != temps:
+        if j > 365:
             print("Error")
-        if temps[1] > 24:
+        if h > 23:
             print("Error")
-        if temps[2] > 60:
+        if m > 59:
             print("Error")
-        if temps[3] > 60:
+        if s > 59:
             print("Error")
     if t == afficheTemps(temps):
         print("Félicitations !")
-    return("")
-            
+    return(t == temps)
+
+
     
     
    
     
     
+
 
 
 
