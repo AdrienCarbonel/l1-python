@@ -16,7 +16,7 @@ def syracuse(n):
 
 
 def tempsVol(n):
-    return(len(syracuse(n)))
+    return(len(syracuse(n))-1)
 
 
 A = []

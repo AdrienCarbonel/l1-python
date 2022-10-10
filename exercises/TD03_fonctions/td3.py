@@ -2,7 +2,7 @@ def tempsEnSeconde(temps):
     """ Renvoie la valeur en seconde de temps donné comme jour, heure, minute, seconde."""
     return(temps[0]*86400 + temps[1]*3600 + temps[2]*60 + temps[3])
 
-temps = (3,23,1,34)
+
   
 
 def secondeEnTemps(seconde):
@@ -12,6 +12,9 @@ def secondeEnTemps(seconde):
 temps = secondeEnTemps(100000)
 
 def afficheTemps(temps):
+    """Cette fonction permet d'afficher le temps en Jours , Heures , Minutes et Secondes
+       temps ----> Tuple : Le temps à afficher
+    """
     if temps[0] > 1:
         print(temps[0], "Jours","",end="")
     elif temps[0] == 0:
@@ -26,7 +29,7 @@ def afficheTemps(temps):
     else:
         print(temps[1],"Heure","",end="")
     if temps[2] > 1:
-        print(temps[2], "Minutes",end="")
+        print(temps[2], "Minutes","",end="")
     elif temps[2] == 0:
         print("",end="")
     else:
@@ -38,10 +41,30 @@ def afficheTemps(temps):
     else:
         print(temps[3],"Seconde","",end="")
     return("")
-print(afficheTemps((3,5,5,50)))
+print(afficheTemps(temps))
+
+
+def demandeTemps(t):
+    t = input("Entrez un temps :")
+    while t != afficheTemps(temps):
+        t = input("Entrez un nouveau temps  :")
+        if temps[0] > 365:
+            print("Error")
+        if temps[1] > 24:
+            print("Error")
+        if temps[2] > 60:
+            print("Error")
+        if temps[3] > 60:
+            print("Error")
+    if t == afficheTemps(temps):
+        print("Félicitations !")
+    return("")
+            
+    
     
    
     
     
+
 
 
