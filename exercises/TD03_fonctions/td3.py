@@ -45,6 +45,11 @@ print(afficheTemps(temps))
 
 
 def demandeTemps(t):
+    """Cette fonction permet de demander à l'utilisateur un temps et elle permet d'afficher si le temps entré par l'utilisateur ets le même que afficheTemps()
+
+    Args:
+        t ----> string : Temps entré par l'utilisateur
+    """
     t = input("Entrez un temps :")
     while t != afficheTemps(temps):
         t = input("Entrez un nouveau temps  :")
