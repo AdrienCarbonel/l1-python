@@ -35,11 +35,11 @@ def afficheTemps(temps):
     else:
         print(temps[2], "Minute","",end="")
     if temps[3] > 1:
-        print(temps[3],"Secondes","",end="")
+        print(temps[3],"Secondes","")
     elif temps[3] == 0:
         print("",end="")
     else:
-        print(temps[3],"Seconde","",end="")
+        print(temps[3],"Seconde","")
     return("")
 
 
@@ -68,11 +68,35 @@ def demandeTemps():
     
 afficheTemps(demandeTemps())
 
+def sommeTemps(temps1,temps2):
+    s = (temps1[0] + temps2[0] , temps1[1] + temps2[1] , temps1[2] + temps2[2] , temps1[3] + temps2[3])
+    i = 0
+    while temps1[3] + temps2[3] >= 60:
+        s = (temps1[0] + temps2[0] , temps1[1] + temps2[1] , temps1[2] + temps2[2] + i , 0)
+        i += 1
+    while temps1[2] + temps2[2] >= 60:
+        s = (temps1[0] + temps2[0] , temps1[1] + temps2[1] + i , 0 , temps1[3] + temps2[3])
+        i += 1
+    while temps1[1] + temps2[1] >= 24:
+        s = (temps1[0] + temps2[0] + i , 0, temps1[2] + temps2[2] , temps1[3] + temps2[3])
+        i += 1
+    return(s)
+
+    
+
+print(sommeTemps((1,2,114,3),(23,9,6,7)))
+
+
+
+
+
+
+
+
+
     
     
-   
-    
-    
+
 
 
 

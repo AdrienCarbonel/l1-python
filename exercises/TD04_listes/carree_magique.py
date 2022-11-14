@@ -42,27 +42,37 @@ def testDiagonaleEgales(carre):
     for i in range(len(carre)):
         somme_1 += carre[i][i]
     somme_2 = 0
-    for k in range(len(carre)-1):
-        for j in range(len(carre)-2):
-            k -= 1
-        somme_2 += carre[k][j-1-k]
-        print(k,j)
+    for j in range(len(carre)):
+        somme_2 += carre[j][3-j]
     if somme_1 == somme_2:
-        print(True)
+        print("Les diagonales sont égales")
     else:
         print("Les diagonales ne sont pas égales...")
-    return("")      
+    
+    return("")
+
     
 
 
-        
-  
-            
 
 
-print(testDiagonaleEgales(carree_magique))
+def estMagique(carre):
+    if testColonnesEgales(carre) == testLigneEgales(carre) == testDiagonaleEgales(carre):
+        return(True)
+    else:
+        return(False)
+
+def estNormal(carre):
+    for i in range(len(carre)):
+        for j in range(len(carre)):
+            if carre[i] in carre:
+                return(True)
+            else:
+                return("Le carré n'est pas normal...")
 
 
+carre_normal=[[1,2,3],[4,5,6],[7,8,9]]
+print(estNormal(carre_normal))
 
 
 
